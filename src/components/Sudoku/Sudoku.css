@@ -1,0 +1,83 @@
+.game {
+  h1 {
+    text-align: center;
+  }
+
+  .sudoku-board {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+
+    .row {
+      display: flex;
+      align-items: center;
+
+      border-top: 1px solid grey;
+      border-bottom: 1px solid grey;
+
+      .cell {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 3rem;
+        width: 4rem;
+        height: 4rem;
+        border-right: 1px solid grey;
+
+        &.cell[data-index='2'],
+        &.cell[data-index='5'] {
+          border-right: 2px solid black;
+        }
+
+        &.given {
+          font-weight: 700;
+          background-color: lightgray;
+        }
+
+        &.error {
+          color: red;
+        }
+
+        input[type=number] {
+          border: none;
+          text-align: center;
+          width: 4rem;
+          height: 4rem;
+          font-size: 3rem;
+          background-color: aliceblue;
+
+          appearance: textfield;
+          -moz-appearance: textfield;
+          ::-webkit-outer-spin-button,
+          ::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .row[data-index='2'],
+    .row[data-index='5'] {
+      border-bottom: 2px solid black;
+    }
+  }
+
+  .controls {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-evenly;
+    
+    button {
+      width: 5rem;
+      border: 1px solid black;
+      border-radius: 1rem;
+      padding: .4em 1.2em;
+
+      svg {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
