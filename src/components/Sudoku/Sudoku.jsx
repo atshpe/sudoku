@@ -39,7 +39,7 @@ export default function Sudoku({ initialBoard }) {
                         active={activeCell?.row === r && activeCell?.cell === c}
                         violated={detectViolations(r, c)}
                         handleChange={insertValue}
-                        handleFocus={(e) => e ? board.focus(r, c) : board.blur()}
+                        handleFocus={cell => cell ? board.focus(r, c) : board.blur()}
                         handleMove={board.move}
                     />)}
                 </div>)}
